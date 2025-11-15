@@ -17,18 +17,22 @@ def get_conn():
     return pool.get_connection()
 
 # DB-Helper
-def db_execute(sql, params=None, write=False, single_record=False):
+def db_write(sql, params=None):
     conn = get_conn()
     try:
-        cur = conn.cursor(dictionary=not write)
+        cur = conn.cursor()
         cur.execute(sql, params or ())
-        if write:
-            conn.commit()
-            return None
-        return cur.fetchone() if single_record else cur.fetchall()
+        conn.commit()
     finally:
-        try:
-            cur.close()
-        except:
-            pass
+        cur.close()
+        conn.close()
+
+def db_read(sql, params=None, single=False):
+    conn = get_conn()
+    try:
+        cur = conn.cursor(dictionary=True)
+        cur.execute(sql, params or ())
+        return cur.fetchone() if single else cur.fetchall()
+    finally:
+        cur.close()
         conn.close()

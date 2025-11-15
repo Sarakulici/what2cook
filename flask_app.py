@@ -4,9 +4,15 @@ import os
 import git
 import hmac
 import hashlib
-from db import db_execute
+from db import db_read, db_write
 from auth import login_manager, authenticate, register_user
 from flask_login import login_user, logout_user, login_required, current_user
+import logging
+
+logging.basicConfig(
+    level=logging.DEBUG,
+    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
+)
 
 # Load .env variables
 load_dotenv()
@@ -90,20 +96,20 @@ def logout():
 def index():
     # GET
     if request.method == "GET":
-        todos = db_execute("SELECT id, content, due FROM todos ORDER BY due")
+        todos = db_read("SELECT id, content, due FROM todos ORDER BY due")
         return render_template("main_page.html", todos=todos)
 
     # POST
     content = request.form["contents"]
     due = request.form["due_at"]
-    db_execute("INSERT INTO todos (content, due) VALUES (%s, %s)", (content, due, ), True)
+    db_write("INSERT INTO todos (content, due) VALUES (%s, %s)", (content, due, ))
     return redirect(url_for("index"))
 
 @app.post("/complete")
 @login_required
 def complete():
     todo_id = request.form.get("id")
-    db_execute("DELETE FROM todos WHERE id=%s", (todo_id,), True)
+    db_write("DELETE FROM todos WHERE id=%s", (todo_id,))
     return redirect(url_for("index"))
 
 if __name__ == "__main__":
