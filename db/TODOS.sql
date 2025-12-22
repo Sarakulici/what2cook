@@ -66,7 +66,12 @@ VALUES
 
     Brot, Erdbeermarmelade, Honig
 
-    (5, 'Cinque Pi', )
+    (5, 'Cinque Pi', 'Teigwaren in reichlich kochendem Salzwasser al dente garen,
+    Rahm aufkochen. Tomatenpüree und Parmesan dazurühren und 1-2 Minuten köcheln lassen,
+    Peterli daruntermischen und mit Pfeffer Salz und Muskatnuss würzen, 
+    Sofort mit den gekochten Teigwaren mischen und servieren.')
+
+    Pasta, Salz, Rahm, Tomatenpüree, Parmesan, Peterli, Pfeffer, Muskatnuss
     
     (6, 'Armer Ritter', 'Die Eier in der Milch verquirlen, Die Brotscheiben gut darin einweichen lassen,
     Inzwischen die Butter in einer Pfanne auslassen, Die Brotscheiben in der Butter goldbraun braten,
@@ -74,13 +79,34 @@ VALUES
 
     Brot, Eier, Milch, Zucker, Zimt 
     
-    (7, 'Bruschetta')
-    (8, 'tortilla de patatas')
-    (9, 'Bratkartoffeln')
+    (7, 'Bruschetta', 'Ofen auf 240° C vorheizen, Brot in ca. 1 cm dicke Scheiben schneiden, auf ein Backblech legen, mit Öl beträufeln,
+    für ca. 5 Min. auf der obersten Rille des Ofens backen, Herausnehmen und auf einem Gitter etwas abkühlen lassen, 
+    Eine Knoblauchzehe schälen und halbieren, Brotscheiben mit Knoblauch einreiben, 
+    600 g Tomaten vierteln sowie entkernen und dann in kleine Würfeli schneiden,
+    etwas Basilikum fein schneiden dann 3 EL Olivenöl daruntermischen sowie mit Salz und Pfeffer würzen. 
+    Tomaten auf den Brotscheiben verteilen.')
+
+    Brot, Olivenöl, Knoblauch, Tomaten, Basilikum, Salz, Pfeffer
+
+    
+    (8, 'tortilla de patatas', 'Eine Zwiebel schälen und  in feine Streifen schneiden, 350 g Kartoffeln schälen und in ca. 2 mm dicke Scheiben hobeln.
+    Olivenöl in einer Pfanne heiss werden lassen, Kartoffeln ca. 5 Min. anbraten und dabei salzen, 
+    Zwiebel ca. 2 Min. mitbraten, 4 Eier verklopfen und mit Salz und Pfeffer würzen, Verquilten Eier über die Kartoffeln giessen, 
+    Zugedeckt bei kleiner Hitze ca. 15 Min. fest werden lassen. Tortilla auf einen Teller stürzen, ein bisschen Öl in die Pfanne geben, 
+    Tortilla mit der ungebackenen Seite nach unten in die Pfanne zurückgleiten lassen und für ca. 5 Min. fertig bratten.')
+
+    Zwiebel, Kartoffel, Olivenöl, Salz, Pfeffer, Eier
+    
+    (9, 'Bratkartoffeln' 'Kartoffeln schälen und in kleine Würfel schneiden, die Kartoffelwürfel in Butter in einer Pfanne unter mehrmaligem Wenden ca. 5 Minuten andünsten, 
+    Amschliessend sie zugedeckt bei mittlerer Hitze ca. 15 Minuten weich dünsten. Dann den Deckel entfernen und bei Bedarf wenig Bratbutter hinzufügen, 
+    die Kartoffelwürfel goldbraun braten und salzen.')
+
+    Kartoffel, Butter, Salz
 ;
 
 INSERT INTO zutaten (zutaten_id, zutatname, rezept_id)
-VALUES (1, 'Mehl', 1), (2, 'Salz', 1), (3, 'Olivenöl', 1 und 3), (4, 'Hefe', 1), (5, 'Tomatensauce', 1), 
-(6, 'Spaghetti', 2), (7, 'Butter', 2), (8, 'Tomaten', 3), (9, 'Knoblauch', 3), (10, 'Zwiebel', 3), (11, 'Brot', 4), 
-(12, 'Erdbeermarmelade', 4), (13, 'Honig', 4)
-;
+VALUES (1, 'Mehl', 1), (2, 'Salz', 1 und 5 und 7 und 8 und 9), (3, 'Olivenöl', 1 und 3 und 7 und 8), (4, 'Hefe', 1), (5, 'Tomatensauce', 1), 
+(6, 'Spaghetti', 2), (7, 'Butter', 2 und 9), (8, 'Tomaten', 3 und 7), (9, 'Knoblauch', 3 und 7), (10, 'Zwiebel', 3 und 8), (11, 'Brot', 4 und 6 und 7), 
+(12, 'Erdbeermarmelade', 4), (13, 'Honig', 4) (14, 'Pasta', 5), (15, 'Rahm', 5), (16, 'Tomatenpüree', 5), (17, 'Parmesan', 5),
+(18, 'Peterli', 5), (19, 'Pfeffer', 5 und 7 und 8), (20, 'Muskatnuss', 5), (21, 'Eier', 6 und 8), (22, 'Milch', 6), (23, 'Zucker', 6), 
+(24, 'Zimt, 6), (25, 'Basilikum', 7), (26, 'Kartoffel', 8 und 9);
