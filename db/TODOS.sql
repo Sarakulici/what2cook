@@ -13,7 +13,7 @@ CREATE TABLE todos (
 );
 
 CREATE TABLE rezpet (
-    rezept.id INT AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
     rezeptname VARCHAR(100),
     kochanleitung VARCHAR(100),
@@ -22,7 +22,7 @@ CREATE TABLE rezpet (
 );
 
 CREATE TABLE zutaten (
-    zutaten.id INT AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
     zutatname VARCHAR(100),
 
@@ -30,7 +30,7 @@ CREATE TABLE zutaten (
 );
 
 CREATE TABLE user (
-    user.id INT AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
     email VARCHAR(100),
     passwort VARCHAR(100),
