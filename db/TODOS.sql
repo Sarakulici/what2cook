@@ -32,7 +32,7 @@ CREATE TABLE zutaten (
     FOREIGN KEY (rezept_id) REFERENCES rezept(id)
 );
 
-INSERT INTO rezept (user_id, rezeptname, kochanleitung)
+INSERT INTO rezept (rezept_id, rezeptname, kochanleitung)
 VALUES 
     
     (1, 'Pizza', '400 g Mehl in einer Schüssel geben, 1 KL Salz und 2 EL Olivenöl hinzugeben,
@@ -45,14 +45,14 @@ VALUES
 
     Mehl, Salz, Olivenöl, Hefe, Tomatensauce
     
-    (1,'Spaghetti', 'Topf mit Wasser auffüllen, 
+    (2,'Spaghetti', 'Topf mit Wasser auffüllen, 
     Reichlich Salz hinzufügen, Spaghetti ins kochende Wasser legen, 
     So lange kochen, wie es auf der Packung steht, Spaghetti absieben, 
     in den gleichen Topf wieder hinzugeben, ein Stück Butter unterrühren') 
 
     Spaghetti, Salz, Butter
     
-    (1, 'Tomatensauce', 'Tomaten waschen, ein Kreuz mit dem Messer in die Tomaten schnitzen, 
+    (3, 'Tomatensauce', 'Tomaten waschen, ein Kreuz mit dem Messer in die Tomaten schnitzen, 
     die Tomaten für 5 min in kochendes Wasser geben, Tomaten aus dem Wasser sieben und auskühlen lassen, 
     die Schale der Tomaten entfernen und in Stücke schneiden, 
     Bisschen Öl in die Pfanne geben mit Knoblauch und gehackten Zwiebeln, 
@@ -62,20 +62,20 @@ VALUES
 
     Tomaten, Öl, Knoblauch, Zwiebel
 
-    (1, 'toms Erbermarmeladenbrot mit Honig', 'Brotscheibe mit Erdbeermarmelade bestreichen, etwas Honig in die Mitte setzen')
+    (4, 'toms Erbermarmeladenbrot mit Honig', 'Brotscheibe mit Erdbeermarmelade bestreichen, etwas Honig in die Mitte setzen')
 
     Brot, Erdbeermarmelade, Honig
 
-    (1, 'Cinque Pi', )
+    (5, 'Cinque Pi', )
     
-    (1, 'Armer Ritter', 'Die Eier in der Milch verquirlen, Die Brotscheiben gut darin einweichen lassen,
+    (6, 'Armer Ritter', 'Die Eier in der Milch verquirlen, Die Brotscheiben gut darin einweichen lassen,
     Inzwischen die Butter in einer Pfanne auslassen, Die Brotscheiben in der Butter goldbraun braten,
     Noch heiss mit Zucker und Zimt bestreuen und warm servieren')
 
     Brot, Eier, Milch, Zucker, Zimt 
     
-    (1, 'Bruschetta')
-    (1, 'tortilla de patatas')
-    (1, 'Bratkartoffeln')
+    (7, 'Bruschetta')
+    (8, 'tortilla de patatas')
+    (9, 'Bratkartoffeln')
 
     ;
