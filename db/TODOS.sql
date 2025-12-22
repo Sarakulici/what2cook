@@ -1,4 +1,9 @@
-CREATE TABLE users (
+DROP TABLE users; 
+DROP TABLE todos;
+DROP TABLE rezept;
+DROP TABLE zutaten;
+
+(CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
     email VARCHAR(100),
@@ -13,6 +18,8 @@ CREATE TABLE todos (
     due DATETIME,
     
     FOREIGN KEY (user_id) REFERENCES users(id)
+# Also wart, ich find mir sötten das mal nöt lösche, will mir es für euse Einkaufszelle bruche chönten
+    
 );
 
 CREATE TABLE rezept (
