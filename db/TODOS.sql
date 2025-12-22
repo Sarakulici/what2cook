@@ -19,7 +19,7 @@ CREATE TABLE rezept (
     id INT AUTO_INCREMENT PRIMARY KEY,
     users_id INT NOT NULL,
     rezeptname VARCHAR(100),
-    kochanleitung VARCHAR(100),
+    kochanleitung TEXT,
 
     FOREIGN KEY (users_id) REFERENCES users(id)
 );
