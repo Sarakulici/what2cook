@@ -4,8 +4,6 @@ CREATE TABLE users (
     email VARCHAR(100),
     passwort VARCHAR(100),
     benutzername VARCHAR(100),
-    
-    FOREIGN KEY (users_id) REFERENCES users(id)
 );
 
 CREATE TABLE todos (
