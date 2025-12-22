@@ -3,7 +3,7 @@ CREATE TABLE users (
     user_id INT NOT NULL,
     email VARCHAR(100),
     passwort VARCHAR(100),
-    benutzername VARCHAR(100),
+    benutzername VARCHAR(100)
 );
 
 CREATE TABLE todos (
