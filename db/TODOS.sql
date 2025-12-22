@@ -110,4 +110,4 @@ VALUES ('Mehl', 1), ('Salz', 1), ('Salz', 5), ('Salz', 7), ('Salz', 8), ('Salz',
 ('Spaghetti', 2), ('Butter', 2), ('Butter', 9), ('Tomaten', 3), ('Tomaten', 7), ('Knoblauch', 3), ('Knoblauch', 7), 
 ('Zwiebel', 3), ('Zwiebel', 8), ('Brot', 4), ('Brot', 6), ('Brot', 7), ('Erdbeermarmelade', 4), ('Honig', 4) ('Pasta', 5), 
 ('Rahm', 5), ('Tomatenpüree', 5), ('Parmesan', 5), ('Peterli', 5), ('Pfeffer', 5 und 7 und 8), ('Muskatnuss', 5), 
-('Eier', 6), ('Eier', 8), ('Milch', 6), ('Zucker', 6), ('Zimt, 6), ('Basilikum', 7), ('Kartoffel', 8), ('Kartoffel',9);
+('Eier', 6), ('Eier', 8), ('Milch', 6), ('Zucker', 6), ('Zimt', 6), ('Basilikum', 7), ('Kartoffel', 8), ('Kartoffel',9);
