@@ -104,9 +104,10 @@ VALUES
     Kartoffel, Butter, Salz
 ;
 
-INSERT INTO zutaten (zutaten_id, zutatname, rezept_id)
-VALUES (1, 'Mehl', 1), (2, 'Salz', 1 und 5 und 7 und 8 und 9), (3, 'Olivenöl', 1 und 3 und 7 und 8), (4, 'Hefe', 1), (5, 'Tomatensauce', 1), 
-(6, 'Spaghetti', 2), (7, 'Butter', 2 und 9), (8, 'Tomaten', 3 und 7), (9, 'Knoblauch', 3 und 7), (10, 'Zwiebel', 3 und 8), (11, 'Brot', 4 und 6 und 7), 
-(12, 'Erdbeermarmelade', 4), (13, 'Honig', 4) (14, 'Pasta', 5), (15, 'Rahm', 5), (16, 'Tomatenpüree', 5), (17, 'Parmesan', 5),
-(18, 'Peterli', 5), (19, 'Pfeffer', 5 und 7 und 8), (20, 'Muskatnuss', 5), (21, 'Eier', 6 und 8), (22, 'Milch', 6), (23, 'Zucker', 6), 
-(24, 'Zimt, 6), (25, 'Basilikum', 7), (26, 'Kartoffel', 8 und 9);
+INSERT INTO zutaten (zutatname, rezept_id)
+VALUES ('Mehl', 1), ('Salz', 1), ('Salz', 5), ('Salz', 7), ('Salz', 8), ('Salz', 9), 
+('Olivenöl', 1), ('Olivenöl', 3), ('Olivenöl', 7), ('Olivenöl', 8), ('Hefe', 1), ('Tomatensauce', 1), 
+('Spaghetti', 2), ('Butter', 2), ('Butter', 9), ('Tomaten', 3), ('Tomaten', 7), ('Knoblauch', 3), ('Knoblauch', 7), 
+('Zwiebel', 3), ('Zwiebel', 8), ('Brot', 4), ('Brot', 6), ('Brot', 7), ('Erdbeermarmelade', 4), ('Honig', 4) ('Pasta', 5), 
+('Rahm', 5), ('Tomatenpüree', 5), ('Parmesan', 5), ('Peterli', 5), ('Pfeffer', 5 und 7 und 8), ('Muskatnuss', 5), 
+('Eier', 6), ('Eier', 8), ('Milch', 6), ('Zucker', 6), ('Zimt, 6), ('Basilikum', 7), ('Kartoffel', 8), ('Kartoffel',9);
