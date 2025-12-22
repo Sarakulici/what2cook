@@ -23,10 +23,10 @@ CREATE TABLE rezpet (
 
 CREATE TABLE zutaten (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT NOT NULL,
+    rezept_id INT NOT NULL,
     zutatname VARCHAR(100),
 
-    FOREIGN KEY (user_id) REFERENCES users(id)
+    FOREIGN KEY (rezept_id) REFERENCES rezept(id)
 );
 
 CREATE TABLE user (
