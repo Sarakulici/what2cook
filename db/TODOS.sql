@@ -55,39 +55,39 @@ VALUES
     
     (1, 'Pizza', '400 g Mehl in einer Schüssel geben, 1 KL Salz und 2 EL Olivenöl hinzugeben, ca. 15 g / die Hälfte eines Hefewürfels in 2.5 dl Wasser auflösen, Mehl mit der Flüssigkeit von der Mitte aus anrühren, Teig gut kneten bis er glatt und geschmeidig ist, Zugedeckt an der Wärme um das Doppelte aufgehen lassen, Von Hand oder mit dem Wallholz kleine oder grosse runde Scheiben formen, Auf mit Backpapier belegtes Blech geben, mit Tomatensauce belegen, beliebig mit Toppings belegen, auf Oben/Unten bei 220° C für 25-30 min backen')
 
-    1) Mehl, Salz, Olivenöl, Hefe, Tomatensauce
+    Mehl, Salz, Olivenöl, Hefe, Tomatensauce
     
     (1, 'Spaghetti', 'Topf mit Wasser auffüllen, reichlich Salz hinzufügen, Spaghetti ins kochende Wasser legen, So lange kochen, wie es auf der Packung steht, Spaghetti absieben, in den gleichen Topf wieder hinzugeben, ein Stück Butter unterrühren') 
 
-    2) Spaghetti, Salz, Butter
+    Spaghetti, Salz, Butter
 
     (1, 'Tomatensauce', 'Tomaten waschen, ein Kreuz mit dem Messer in die Tomaten schnitzen, die Tomaten für 5 min in kochendes Wasser geben, Tomaten aus dem Wasser sieben und auskühlen lassen, die Schale der Tomaten entfernen und in Stücke schneiden, Bisschen Olivenöl in die Pfanne geben mit Knoblauch und gehackten Zwiebeln, Sobald es heiss wird die Tomatenstücke hinzufügen und köcheln, entweder mit einem Pürierstab oder mit einer Gabel die Stücke klein hacken, 20 min köcheln lassen, mit Salz und Pfeffern sowie Kräuter würzen') 
     
-    3) Tomaten, Olivenöl, Knoblauch, Zwiebel
+    Tomaten, Olivenöl, Knoblauch, Zwiebel, Salz, Pfeffer, Kräuter
 
     (1, 'toms Erdbeermarmeladenbrot mit Honig', 'Brotscheibe mit Erdbeermarmelade bestreichen, etwas Honig in die Mitte setzen, servieren')
 
-    4) Brot, Erdbeermarmelade, Honig
+    Brot, Erdbeermarmelade, Honig
 
     (1, 'Cinque Pi', 'Teigwaren in reichlich kochendem Salzwasser al dente garen, Rahm aufkochen. Tomatenpüree und Parmesan dazu rühren und 1-2 Minuten köcheln lassen, Peterli daruntermischen und mit Pfeffer Salz und Muskatnuss würzen, Sofort mit den gekochten Teigwaren mischen und servieren.')
 
-    5) Pasta, Salz, Rahm, Tomatenpüree, Parmesan, Peterli, Pfeffer, Muskatnuss
+    Pasta, Salz, Rahm, Tomatenpüree, Parmesan, Peterli, Pfeffer, Muskatnuss
     
     (1, 'Armer Ritter', 'Die Eier in der Milch verquirlen, Die Brotscheiben gut darin einweichen lassen, Inzwischen die Butter in einer Pfanne auslassen, Die Brotscheiben in der Butter goldbraun braten, Noch heiss mit Zucker und Zimt bestreuen und warm servieren')
 
-    6) Brot, Eier, Milch, Zucker, Zimt 
+    Brot, Eier, Milch, Butter, Zucker, Zimt 
     
     (1, 'Bruschetta', 'Ofen auf 240° C vorheizen, Brot in ca. 1 cm dicke Scheiben schneiden, auf ein Backblech legen, mit Öl beträufeln, für ca. 5 Min. auf der obersten Rille des Ofens backen, Herausnehmen und auf einem Gitter etwas abkühlen lassen, Eine Knoblauchzehe schälen und halbieren, Brotscheiben mit Knoblauch einreiben, 600 g Tomaten vierteln sowie entkernen und dann in kleine Würfel schneiden, etwas Basilikum fein schneiden dann 3 EL Olivenöl daruntermischen sowie mit Salz und Pfeffer würzen. Tomaten auf den Brotscheiben verteilen.')
 
-    7) Brot, Olivenöl, Knoblauch, Tomaten, Basilikum, Salz, Pfeffer
+    Brot, Olivenöl, Knoblauch, Tomaten, Basilikum, Salz, Pfeffer
     
     (1, 'tortilla de patatas', 'Eine Zwiebel schälen und in feine Streifen schneiden, 350 g Kartoffeln schälen und in ca. 2 mm dicke Scheiben hobeln. Olivenöl in einer Pfanne heiss werden lassen, Kartoffeln ca. 5 Min. anbraten und dabei salzen, Zwiebel ca. 2 Min. mitbraten, 4 Eier Verkopfen und mit Salz und Pfeffer würzen, Verquirlten Eier über die Kartoffeln giessen, Zugedeckt bei kleiner Hitze ca. 15 Min. fest werden lassen. Tortilla auf einen Teller stürzen, ein bisschen Öl in die Pfanne geben, Tortilla mit der ungebackenen Seite nach unten in die Pfanne zurückgleiten lassen und für ca. 5 Min. fertig braten.')
 
-    8) Zwiebel, Kartoffel, Olivenöl, Salz, Pfeffer, Eier
+    Zwiebel, Kartoffel, Olivenöl, Salz, Pfeffer, Eier
 
     (1, 'Bratkartoffeln' 'Kartoffeln schälen und in kleine Würfel schneiden, die Kartoffelwürfel in Butter in einer Pfanne unter mehrmaligem Wenden ca. 5 Minuten andünsten, Anschliessend sie zugedeckt bei mittlerer Hitze ca. 15 Minuten weich dünsten. Dann den Deckel entfernen und bei Bedarf wenig Bratbutter hinzufügen, die Kartoffelwürfel goldbraun braten und salzen.')
     
-    9) Kartoffel, Butter, Salz
+    Kartoffel, Butter, Salz
 ;
 
 INSERT INTO zutaten (zutatname)
