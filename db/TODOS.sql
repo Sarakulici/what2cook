@@ -9,6 +9,10 @@ DROP TABLE zutaten;
     email VARCHAR(100) NOT NULL,
     passwort VARCHAR(100) NOT NULL UNIQUE,
     benutzername VARCHAR(100) NOT NULL UNIQUE
+
+    FOREIGN KEY (rezept_id) REFERENCES rezept(id)
+    FOREIGN KEY (zutat_id) REFERENCES zutaten(id) # Stimmt das so??
+    
 );
 
 CREATE TABLE todos (
@@ -18,7 +22,7 @@ CREATE TABLE todos (
     due DATETIME,
     FOREIGN KEY (user_id) REFERENCES users(id)
     
-# Also wart, ich find mir sötten das mal nöt lösche, will mir es für euse Einkaufszelle bruche chönten
+# Also wart, ich find mir sötten das mal nöt lösche, will mir es für euse Einkaufszettel bruche chönten
     
 );
 
@@ -28,6 +32,9 @@ CREATE TABLE rezept (
     rezeptname VARCHAR(100) NOT NULL,
     kochanleitung TEXT NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users(id)
+
+    FOREIGN KEY (zutat_id) REFERENCES zutaten(id) # Stimmt das so??
+    
 );
 
 CREATE TABLE zutaten (
@@ -35,6 +42,8 @@ CREATE TABLE zutaten (
     rezept_id INT NOT NULL,
     zutatname VARCHAR(100) NOT NULL UNIQUE,
     FOREIGN KEY (rezept_id) REFERENCES rezept(id)
+
+    FOREIGN KEY (user_id) REFERENCES users(id) # Stimmt das so??
 );
 
 CREATE TABLE rezept_zutaten (
