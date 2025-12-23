@@ -75,3 +75,35 @@ INSERT INTO zutaten (zutatname)
 VALUES ('Mehl'), ('Salz'), ('Olivenöl'), ('Hefe'), ('Tomatensauce'), ('Spaghetti'), ('Butter'), ('Tomaten'), ('Knoblauch'),
 ('Zwiebel'), ('Pfeffer'), ('Kräuter'), ('Brot'), ('Erdbeermarmelade'), ('Honig'), ('Pasta'), ('Rahm'), ('Tomatenpüree'),
 ('Parmesan'), ('Peterli'), ('Muskatnuss'), ('Eier'), ('Milch'), ('Zucker'), ('Zimt'), ('Basilikum'), ('Kartoffel');
+
+INSERT INTO rezept_zutaten (rezept_id, zutat_id)
+VALUES
+(1, 1), # Mehl
+(1, 2), (2, 2), (3, 2), (5, 2), (7, 2), (8, 2), (9, 2), # Salz
+(1, 3), (3, 3), (7, 3), (8, 3), # Olivenöl
+(1, 4), # Hefe
+(1, 5) # Tomatensauce
+(2, 6) # Spaghetti
+(2, 7), (6, 7), (9, 7) # Butter
+(3, 8), (7, 8) # Tomaten
+(3, 9), (7, 9) # Knoblauch
+(3, 10), (8, 10) # Zwiebel
+(3, 11), (5, 11), (7, 11), (8, 11) # Pfeffer
+(3, 12) # Kräuter
+(4, 13), (6, 13), (7, 13) # Brot 
+(4, 14) # Erdbeermarmelade 
+(4, 15) # Honig
+(5, 16) # Pasta
+(5, 17) # Rahm
+(5, 18) # Tomatenpüree
+(5, 19) # Parmesan
+(5, 20) # Peterli
+(5, 21) # Muskatnuss
+(6, 22), (8, 22) # Eier
+(6, 23) # Milch
+(6, 24) # Zucker
+(6, 25) # Zimt
+(7, 26) # Basilikum
+(8, 27), (9, 27) # Kartoffel
+
+
