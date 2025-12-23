@@ -6,9 +6,9 @@ DROP TABLE zutaten;
 (CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
-    email VARCHAR(100),
-    passwort VARCHAR(100),
-    benutzername VARCHAR(100)
+    email VARCHAR(100) NOT NULL,
+    passwort VARCHAR(100) NOT NULL UNIQUE,
+    benutzername VARCHAR(100) NOT NULL UNIQUE
 );
 
 CREATE TABLE todos (
