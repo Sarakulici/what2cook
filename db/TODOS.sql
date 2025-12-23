@@ -122,7 +122,7 @@ VALUES
     9) Kartoffel, Butter, Salz
 ;
 
-INSERT INTO zutaten (zutatname, rezept_id)
+INSERT INTO zutaten (zutatname)
 VALUES ('Mehl', 1), ('Salz', 1), ('Salz', 5), ('Salz', 7), ('Salz', 8), ('Salz', 9), 
 ('Olivenöl', 1), ('Olivenöl', 3), ('Olivenöl', 7), ('Olivenöl', 8), ('Hefe', 1), ('Tomatensauce', 1), 
 ('Spaghetti', 2), ('Butter', 2), ('Butter', 9), ('Tomaten', 3), ('Tomaten', 7), ('Knoblauch', 3), ('Knoblauch', 7), 
