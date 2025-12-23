@@ -25,8 +25,8 @@ CREATE TABLE todos (
 CREATE TABLE rezept (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
-    rezeptname VARCHAR(100),
-    kochanleitung TEXT,
+    rezeptname VARCHAR(100) NOT NULL,
+    kochanleitung TEXT NOT NULL,
 
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
