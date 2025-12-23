@@ -3,7 +3,7 @@ DROP TABLE todos;
 DROP TABLE rezept;
 DROP TABLE zutaten;
 
-(CREATE TABLE users (
+CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
     email VARCHAR(100) NOT NULL,
