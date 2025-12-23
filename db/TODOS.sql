@@ -50,10 +50,10 @@ CREATE TABLE rezept_zutaten (
 );
 
 
-INSERT INTO rezept (rezeptname, kochanleitung)
+INSERT INTO rezept (user_id, rezeptname, kochanleitung)
 VALUES 
     
-    ('Pizza', '400 g Mehl in einer Schüssel geben, 1 KL Salz und 2 EL Olivenöl hinzugeben,
+    (1, 'Pizza', '400 g Mehl in einer Schüssel geben, 1 KL Salz und 2 EL Olivenöl hinzugeben,
     ca. 15 g / die Hälfte eines Hefewürfels in 2.5 dl Wasser auflösen, 
     Mehl mit der Flüssigkeit von der Mitte aus anrühren, Teig gut kneten bis er glatt und geschmeidig ist, 
     Zugedeckt an der Wärme um das Doppelte aufgehen lassen, 
