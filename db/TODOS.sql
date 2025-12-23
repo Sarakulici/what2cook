@@ -16,8 +16,8 @@ CREATE TABLE todos (
     user_id INT NOT NULL,
     content VARCHAR(100),
     due DATETIME,
-    
     FOREIGN KEY (user_id) REFERENCES users(id)
+    
 # Also wart, ich find mir sötten das mal nöt lösche, will mir es für euse Einkaufszelle bruche chönten
     
 );
@@ -27,28 +27,23 @@ CREATE TABLE rezept (
     user_id INT NOT NULL,
     rezeptname VARCHAR(100) NOT NULL,
     kochanleitung TEXT NOT NULL,
-
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
 CREATE TABLE zutaten (
     id INT AUTO_INCREMENT PRIMARY KEY,
     rezept_id INT NOT NULL,
-    zutatname VARCHAR(100),
-
+    zutatname VARCHAR(100) NOT NULL UNIQUE,
     FOREIGN KEY (rezept_id) REFERENCES rezept(id)
 );
 
 CREATE TABLE rezept_zutaten (
     rezept_id INT NOT NULL,
     zutat_id INT NOT NULL,
-
     PRIMARY KEY (rezept_id, zutat_id),
-
-    FOREIGN KEY (rezept_id) REFERENCES rezepte(id),
+    FOREIGN KEY (rezept_id) REFERENCES rezept(id),
     FOREIGN KEY (zutat_id) REFERENCES zutaten(id)
 );
-
 
 INSERT INTO rezept (user_id, rezeptname, kochanleitung)
 VALUES 
@@ -69,7 +64,7 @@ VALUES
     
     (1, 'tortilla de patatas', 'Eine Zwiebel schälen und in feine Streifen schneiden, 350 g Kartoffeln schälen und in ca. 2 mm dicke Scheiben hobeln. Olivenöl in einer Pfanne heiss werden lassen, Kartoffeln ca. 5 Min. anbraten und dabei salzen, Zwiebel ca. 2 Min. mitbraten, 4 Eier Verkopfen und mit Salz und Pfeffer würzen, Verquirlten Eier über die Kartoffeln giessen, Zugedeckt bei kleiner Hitze ca. 15 Min. fest werden lassen. Tortilla auf einen Teller stürzen, ein bisschen Öl in die Pfanne geben, Tortilla mit der ungebackenen Seite nach unten in die Pfanne zurückgleiten lassen und für ca. 5 Min. fertig braten.')
 
-    (1, 'Bratkartoffeln' 'Kartoffeln schälen und in kleine Würfel schneiden, die Kartoffelwürfel in Butter in einer Pfanne unter mehrmaligem Wenden ca. 5 Minuten andünsten, Anschliessend sie zugedeckt bei mittlerer Hitze ca. 15 Minuten weich dünsten. Dann den Deckel entfernen und bei Bedarf wenig Bratbutter hinzufügen, die Kartoffelwürfel goldbraun braten und salzen.');
+    (1, 'Bratkartoffeln', 'Kartoffeln schälen und in kleine Würfel schneiden, die Kartoffelwürfel in Butter in einer Pfanne unter mehrmaligem Wenden ca. 5 Minuten andünsten, Anschliessend sie zugedeckt bei mittlerer Hitze ca. 15 Minuten weich dünsten. Dann den Deckel entfernen und bei Bedarf wenig Bratbutter hinzufügen, die Kartoffelwürfel goldbraun braten und salzen.');
 
 INSERT INTO zutaten (zutatname)
 VALUES ('Mehl'), ('Salz'), ('Olivenöl'), ('Hefe'), ('Tomatensauce'), ('Spaghetti'), ('Butter'), ('Tomaten'), ('Knoblauch'),
