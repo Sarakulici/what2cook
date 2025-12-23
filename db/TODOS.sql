@@ -31,8 +31,8 @@ CREATE TABLE rezept (
     user_id INT NOT NULL,
     rezeptname VARCHAR(100) NOT NULL,
     kochanleitung TEXT NOT NULL,
+    
     FOREIGN KEY (user_id) REFERENCES users(id)
-
     FOREIGN KEY (zutat_id) REFERENCES zutaten(id) # Stimmt das so??
     
 );
@@ -41,8 +41,8 @@ CREATE TABLE zutaten (
     id INT AUTO_INCREMENT PRIMARY KEY,
     rezept_id INT NOT NULL,
     zutatname VARCHAR(100) NOT NULL UNIQUE,
+    
     FOREIGN KEY (rezept_id) REFERENCES rezept(id)
-
     FOREIGN KEY (user_id) REFERENCES users(id) # Stimmt das so??
 );
 
@@ -50,6 +50,7 @@ CREATE TABLE rezept_zutaten (
     rezept_id INT NOT NULL,
     zutat_id INT NOT NULL,
     PRIMARY KEY (rezept_id, zutat_id),
+    
     FOREIGN KEY (rezept_id) REFERENCES rezept(id),
     FOREIGN KEY (zutat_id) REFERENCES zutaten(id)
 );
