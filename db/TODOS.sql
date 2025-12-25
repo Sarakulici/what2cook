@@ -5,8 +5,7 @@ DROP TABLE zutaten;
 
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT NOT NULL,
-    email VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
     passwort VARCHAR(100) NOT NULL,
     benutzername VARCHAR(100) NOT NULL UNIQUE,
 
