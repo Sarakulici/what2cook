@@ -12,15 +12,14 @@ CREATE TABLE users (
     FOREIGN KEY (rezept_id) REFERENCES rezept(id),
     FOREIGN KEY (zutat_id) REFERENCES zutaten(id) # Stimmt das so??
 
-    # CREATE TABLE users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    email VARCHAR(100) NOT NULL UNIQUE,
-    passwort VARCHAR(100) NOT NULL,
-    benutzername VARCHAR(100) NOT NULL UNIQUE
-);
+    );
 
-    
-);
+#CREATE TABLE users (
+    #id INT AUTO_INCREMENT PRIMARY KEY,
+    #email VARCHAR(100) NOT NULL UNIQUE,
+    #passwort VARCHAR(100) NOT NULL,
+    #benutzername VARCHAR(100) NOT NULL UNIQUE
+#);
 
 CREATE TABLE todos (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -41,8 +40,16 @@ CREATE TABLE rezept (
     
     FOREIGN KEY (user_id) REFERENCES users(id),
     FOREIGN KEY (zutat_id) REFERENCES zutaten(id) # Stimmt das so??
-    
-);
+
+    );
+
+#CREATE TABLE rezept (
+    #id INT AUTO_INCREMENT PRIMARY KEY,
+    #user_id INT NOT NULL,
+    #rezeptname VARCHAR(100) NOT NULL,
+    #kochanleitung TEXT NOT NULL,
+    #FOREIGN KEY (user_id) REFERENCES users(id)
+#);
 
 CREATE TABLE zutaten (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -51,7 +58,14 @@ CREATE TABLE zutaten (
     
     FOREIGN KEY (rezept_id) REFERENCES rezept(id),
     FOREIGN KEY (user_id) REFERENCES users(id) # Stimmt das so??
-);
+
+    );
+
+ #CREATE TABLE zutaten (
+    #id INT AUTO_INCREMENT PRIMARY KEY,
+    #zutatname VARCHAR(100) NOT NULL UNIQUE
+#);
+
 
 CREATE TABLE rezept_zutaten (
     rezept_id INT NOT NULL,
@@ -61,6 +75,15 @@ CREATE TABLE rezept_zutaten (
     FOREIGN KEY (rezept_id) REFERENCES rezept(id),
     FOREIGN KEY (zutat_id) REFERENCES zutaten(id)
 );
+
+#CREATE TABLE rezept_zutaten (
+    #rezept_id INT NOT NULL,
+    #zutat_id INT NOT NULL,
+    #PRIMARY KEY (rezept_id, zutat_id),
+    #FOREIGN KEY (rezept_id) REFERENCES rezept(id),
+    #FOREIGN KEY (zutat_id) REFERENCES zutaten(id)
+#);
+
 
 INSERT INTO rezept (user_id, rezeptname, kochanleitung)
 VALUES 
