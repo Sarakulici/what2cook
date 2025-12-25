@@ -29,8 +29,7 @@ CREATE TABLE rezepte (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
     rezeptname VARCHAR(250) NOT NULL,
-    #description VARCHAR(250) NOT NULL,
-    #kochanleitung TEXT NOT NULL,
+    description VARCHAR(250) NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
@@ -51,6 +50,17 @@ CREATE TABLE rezept_zutaten (
     FOREIGN KEY (rezept_id) REFERENCES rezept(id),
     FOREIGN KEY (zutat_id) REFERENCES zutaten(id)
 );
+
+INSERT INTO rezepte (user_id, name, description) VALUES
+(1, 'Pizza', 'Klassischer Pizzateig mit Tomatensauce und Käse'),
+(1, 'Spaghetti', 'Spaghetti mit Butter - Kindheistklassiker'),
+(1, 'Tomatensauce', 'Frische Tomatensauce von scratch'),
+(1, 'toms Erdbeermarmeladenbrot mit Honig', 'Kindheitsklassiker'),
+(1, 'Cinque Pi', 'Cremige Pasta mit Rahm-Tomatensauce'),
+(1, 'Armer Ritter', 'Einfaches süsses Frühstück'),
+(1, 'Bruschetta', 'Klassische italienische Häpchenkost'),
+(1, 'tortilla de patatas', 'Traditioneller spanischer Klassiker'),
+(1, 'Bratkartoffeln', 'Knusprige Kartoffelwürfel, perfekt als Beilage'),
 
 INSERT INTO rezept (user_id, rezeptname, kochanleitung)
 VALUES 
