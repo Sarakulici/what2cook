@@ -1,5 +1,5 @@
 DROP TABLE users; 
-DROP TABLE todos;
+DROP TABLE einkaufszettel;
 DROP TABLE rezept;
 DROP TABLE zutaten;
 
