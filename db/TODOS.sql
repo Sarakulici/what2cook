@@ -11,6 +11,14 @@ CREATE TABLE users (
 
     FOREIGN KEY (rezept_id) REFERENCES rezept(id),
     FOREIGN KEY (zutat_id) REFERENCES zutaten(id) # Stimmt das so??
+
+    # CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    passwort VARCHAR(100) NOT NULL,
+    benutzername VARCHAR(100) NOT NULL UNIQUE
+);
+
     
 );
 
