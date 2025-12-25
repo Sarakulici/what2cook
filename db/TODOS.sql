@@ -76,14 +76,7 @@ CREATE TABLE rezept_zutaten (
     FOREIGN KEY (zutat_id) REFERENCES zutaten(id)
 );
 
-#CREATE TABLE rezept_zutaten (
-    #rezept_id INT NOT NULL,
-    #zutat_id INT NOT NULL,
-    #PRIMARY KEY (rezept_id, zutat_id),
-    #FOREIGN KEY (rezept_id) REFERENCES rezept(id),
-    #FOREIGN KEY (zutat_id) REFERENCES zutaten(id)
-#);
-
+#De isch richtig
 
 INSERT INTO rezept (user_id, rezeptname, kochanleitung)
 VALUES 
