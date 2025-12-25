@@ -10,6 +10,12 @@ CREATE TABLE users (
     benutzername VARCHAR(100) NOT NULL UNIQUE
 );
 
+#CREATE TABLE users (
+    #id INT AUTO_INCREMENT PRIMARY KEY,
+    #username VARCHAR(250) NOT NULL UNIQUE,
+    #password VARCHAR(250) NOT NULL
+#);
+
 CREATE TABLE einkaufszettel (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
@@ -19,17 +25,22 @@ CREATE TABLE einkaufszettel (
     
 );
 
-CREATE TABLE rezept (
+CREATE TABLE rezepte (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
-    rezeptname VARCHAR(100) NOT NULL,
-    kochanleitung TEXT NOT NULL,
+    rezeptname VARCHAR(250) NOT NULL,
+    #description VARCHAR(250) NOT NULL,
+    #kochanleitung TEXT NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
 CREATE TABLE zutaten (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    zutatname VARCHAR(100) NOT NULL UNIQUE
+    rezept_id INT NOT NULL,
+    zutatname VARCHAR(250) NOT NULL,
+    number INT,
+    einheit VARCHAR(50),
+    FOREIGN KEY (rezept_id) REFERENCES rezepte(id)
 );
 
 CREATE TABLE rezept_zutaten (
