@@ -7,28 +7,15 @@ CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(100) NOT NULL UNIQUE,
     passwort VARCHAR(100) NOT NULL,
-    benutzername VARCHAR(100) NOT NULL UNIQUE,
+    benutzername VARCHAR(100) NOT NULL UNIQUE
+);
 
-    FOREIGN KEY (rezept_id) REFERENCES rezept(id),
-    FOREIGN KEY (zutat_id) REFERENCES zutaten(id) # Stimmt das so??
-
-    );
-
-#CREATE TABLE users (
-    #id INT AUTO_INCREMENT PRIMARY KEY,
-    #email VARCHAR(100) NOT NULL UNIQUE,
-    #passwort VARCHAR(100) NOT NULL,
-    #benutzername VARCHAR(100) NOT NULL UNIQUE
-#);
-
-CREATE TABLE todos (
+CREATE TABLE einkaufszettel (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
     content VARCHAR(100),
     due DATETIME,
     FOREIGN KEY (user_id) REFERENCES users(id)
-    
-# Also wart, ich find mir sötten das mal nöt lösche, will mir es für euse Einkaufszettel bruche chönten
     
 );
 
@@ -37,35 +24,13 @@ CREATE TABLE rezept (
     user_id INT NOT NULL,
     rezeptname VARCHAR(100) NOT NULL,
     kochanleitung TEXT NOT NULL,
-    
-    FOREIGN KEY (user_id) REFERENCES users(id),
-    FOREIGN KEY (zutat_id) REFERENCES zutaten(id) # Stimmt das so??
-
-    );
-
-#CREATE TABLE rezept (
-    #id INT AUTO_INCREMENT PRIMARY KEY,
-    #user_id INT NOT NULL,
-    #rezeptname VARCHAR(100) NOT NULL,
-    #kochanleitung TEXT NOT NULL,
-    #FOREIGN KEY (user_id) REFERENCES users(id)
-#);
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
 
 CREATE TABLE zutaten (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    rezept_id INT NOT NULL,
-    zutatname VARCHAR(100) NOT NULL UNIQUE,
-    
-    FOREIGN KEY (rezept_id) REFERENCES rezept(id),
-    FOREIGN KEY (user_id) REFERENCES users(id) # Stimmt das so??
-
-    );
-
- #CREATE TABLE zutaten (
-    #id INT AUTO_INCREMENT PRIMARY KEY,
-    #zutatname VARCHAR(100) NOT NULL UNIQUE
-#);
-
+    zutatname VARCHAR(100) NOT NULL UNIQUE
+);
 
 CREATE TABLE rezept_zutaten (
     rezept_id INT NOT NULL,
@@ -75,8 +40,6 @@ CREATE TABLE rezept_zutaten (
     FOREIGN KEY (rezept_id) REFERENCES rezept(id),
     FOREIGN KEY (zutat_id) REFERENCES zutaten(id)
 );
-
-#De isch richtig
 
 INSERT INTO rezept (user_id, rezeptname, kochanleitung)
 VALUES 
