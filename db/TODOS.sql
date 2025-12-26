@@ -13,29 +13,29 @@ DROP TABLE zutaten;
     
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    benutzername VARCHAR(250) NOT NULL UNIQUE,
-    passwort VARCHAR(250) NOT NULL
+    username VARCHAR(250) NOT NULL UNIQUE,
+    password VARCHAR(250) NOT NULL
 );
 
 CREATE TABLE rezepte (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
-    rezeptname VARCHAR(250) NOT NULL,
-    beschreibung VARCHAR(250) NOT NULL,
+    name VARCHAR(250) NOT NULL,
+    description VARCHAR(250) NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
 CREATE TABLE zutaten (
     id INT AUTO_INCREMENT PRIMARY KEY,
     rezept_id INT NOT NULL,
-    zutatname VARCHAR(250) NOT NULL,
-    nummer INT,
+    name VARCHAR(250) NOT NULL,
+    number INT,
     einheit VARCHAR(50),
     FOREIGN KEY (rezept_id) REFERENCES rezepte(id)
 );
 
 --Beschreibungen von jedem Rezept (kann man noch ändern)
-INSERT INTO rezepte (user_id, rezeptname, beschreibung) VALUES
+INSERT INTO rezepte (user_id, name, description) VALUES
 (1, 'Pizza', 'Klassischer Pizzateig mit Tomatensauce und Käse'),
 (1, 'Spaghetti', 'Spaghetti mit Butter - Kindheistklassiker'),
 (1, 'Tomatensauce', 'Frische Tomatensauce von scratch'),
@@ -47,7 +47,7 @@ INSERT INTO rezepte (user_id, rezeptname, beschreibung) VALUES
 (1, 'Bratkartoffeln', 'Knusprige Kartoffelwürfel, perfekt als Beilage'),
 
 -- Zutaten für Pizza (rezept_id 1)
-INSERT INTO zutaten (rezept_id, zutatname, nummer, einheit) VALUES
+INSERT INTO zutaten (rezept_id, name, number, einheit) VALUES
 (1, 'Mehl', 400, 'g'),
 (1, 'Salz', 1, 'KL'),
 (1, 'Olivenöl', 2, 'EL'),
@@ -58,14 +58,14 @@ INSERT INTO zutaten (rezept_id, zutatname, nummer, einheit) VALUES
 (1, 'Toppings', NULL, NULL);
 
 -- Zutaten für Spaghetti (rezept_id 2)
-INSERT INTO zutaten (rezept_id, zutatname, nummer, einheit) VALUES
+INSERT INTO zutaten (rezept_id, name, number, einheit) VALUES
 (2, 'Spaghetti', NULL, NULL),
 (2, 'Wasser', NULL, NULL),
 (2, 'Salz', NULL, NULL),
 (2, 'Butter', NULL, NULL):
 
 -- Zutaten für Tomatensauce (rezept_id 3)
-INSERT INTO zutaten (rezept_id, zutatname, nummer, einheit) VALUES
+INSERT INTO zutaten (rezept_id, name, number, einheit) VALUES
 (3, 'Tomaten', 8, NULL),
 (3, 'Olivenöl', NULL, NULL),
 (3, 'Knoblauch', 1, 'Zehe'),
@@ -75,13 +75,13 @@ INSERT INTO zutaten (rezept_id, zutatname, nummer, einheit) VALUES
 (3, 'Kräuter', NULL, NULL); 
 
 -- Zutaten für Toms Erdbeermarmeladenbrot mit Honig (rezept_id 4)
-INSERT INTO zutaten (rezept_id, zutatname, nummer, einheit) VALUES
+INSERT INTO zutaten (rezept_id, name, number, einheit) VALUES
 (4, 'Brot', NULL, NULL),
 (4, 'Marmelade', NULL, NULL),
 (4, 'Honig', NULL, NULL);
 
 -- Zutaten für Cinque Pi (rezept_id 5)
-INSERT INTO zutaten (rezept_id, zutatname, nummer, einheit) VALUES
+INSERT INTO zutaten (rezept_id, name, number, einheit) VALUES
 (5, 'Pasta', 500, 'g'),
 (5, 'Halbrahm', 4, 'dl'),
 (5, 'Tomatenpüree', 3, 'EL'),
@@ -92,7 +92,7 @@ INSERT INTO zutaten (rezept_id, zutatname, nummer, einheit) VALUES
 (5, 'Pfeffer', NULL, NULL);
 
 -- Zutaten für Armer Ritter (rezept_id 6)
-INSERT INTO zutaten (rezept_id, zutatname, nummer, einheit) VALUES
+INSERT INTO zutaten (rezept_id, name, number, einheit) VALUES
 (6, 'Brot', 4, 'Scheiben'),
 (6, 'Ei', 1, NULL),
 (6, 'Milch', 2.5, 'dl'),
@@ -101,7 +101,7 @@ INSERT INTO zutaten (rezept_id, zutatname, nummer, einheit) VALUES
 (6, 'Zimt', NULL, NULL);
 
 -- Zutaten für Bruschetta (rezept_id 7)
-INSERT INTO zutaten (rezept_id, zutatname, nummer, einheit) VALUES
+INSERT INTO zutaten (rezept_id, name, number, einheit) VALUES
 (7, 'Brot', NULL, NULL),
 (7, 'Olivenöl', 3, 'EL'), 
 (7, 'Knoblauch', 1, 'Zehe'), 
@@ -111,7 +111,7 @@ INSERT INTO zutaten (rezept_id, zutatname, nummer, einheit) VALUES
 (7, 'Pfeffer', NULL, NULL);
 
 -- Zutaten für tortilla de patatas (rezept_id 8)
-INSERT INTO zutaten (rezept_id, zutatname, nummer, einheit) VALUES
+INSERT INTO zutaten (rezept_id, name, number, einheit) VALUES
 (8, 'Zwiebel', 1, NULL),
 (8, 'Kartoffeln', 350, 'g'), 
 (8, 'Olivenöl', NULL, NULL),
@@ -120,7 +120,7 @@ INSERT INTO zutaten (rezept_id, zutatname, nummer, einheit) VALUES
 (8, 'Pfeffer', NULL, NULL);
 
 -- Zutaten für Bratkartoffel (rezept_id 9)
-INSERT INTO zutaten (rezept_id, zutatname, nummer, einheit) VALUES
+INSERT INTO zutaten (rezept_id, name, number, einheit) VALUES
 (9, 'Kartoffeln', NULL, NULL),
 (9, 'Butter', NULL, NULL),
 (9, 'Salz', NULL, NULL);
