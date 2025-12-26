@@ -65,7 +65,7 @@ INSERT INTO rezepte (user_id, name, description) VALUES
 INSERT INTO rezept (user_id, rezeptname, kochanleitung)
 VALUES 
     
-    (1, 'Pizza', '400 g Mehl in einer Schüssel geben, 1 KL Salz und 2 EL Olivenöl hinzugeben, ca. 15 g / die Hälfte eines Hefewürfels in 2.5 dl Wasser auflösen, Mehl mit der Flüssigkeit von der Mitte aus anrühren, Teig gut kneten bis er glatt und geschmeidig ist, Zugedeckt an der Wärme um das Doppelte aufgehen lassen, Von Hand oder mit dem Wallholz kleine oder grosse runde Scheiben formen, Auf mit Backpapier belegtes Blech geben, mit Tomatensauce belegen, beliebig mit Toppings belegen, auf Oben/Unten bei 220° C für 25-30 min backen'),
+    (1, 'Pizza', '400 g Mehl in einer Schüssel geben, 1 KL Salz und 2 EL Olivenöl hinzugeben, ca. 15 g / die Hälfte eines Hefewürfels in 2.5 dl Wasser auflösen, Mehl mit der Flüssigkeit von der Mitte aus anrühren, Teig gut kneten bis er glatt und geschmeidig ist, Zugedeckt an der Wärme um das Doppelte aufgehen lassen, Von Hand oder mit dem Wallholz kleine oder grosse runde Scheiben formen, Auf mit Backpapier belegtes Blech geben, mit Tomatensauce und Käse belegen, beliebig mit Toppings belegen, auf Oben/Unten bei 220° C für 25-30 min backen'),
     
     (1, 'Spaghetti', 'Topf mit Wasser auffüllen, reichlich Salz hinzufügen, Spaghetti ins kochende Wasser legen, So lange kochen, wie es auf der Packung steht, Spaghetti absieben, in den gleichen Topf wieder hinzugeben, ein Stück Butter unterrühren'), 
 
@@ -87,6 +87,19 @@ INSERT INTO zutaten (zutatname)
 VALUES ('Mehl'), ('Salz'), ('Olivenöl'), ('Hefe'), ('Tomatensauce'), ('Spaghetti'), ('Butter'), ('Tomaten'), ('Knoblauch'),
 ('Zwiebel'), ('Pfeffer'), ('Kräuter'), ('Brot'), ('Erdbeermarmelade'), ('Honig'), ('Pasta'), ('Rahm'), ('Tomatenpüree'),
 ('Parmesan'), ('Peterli'), ('Muskatnuss'), ('Eier'), ('Milch'), ('Zucker'), ('Zimt'), ('Basilikum'), ('Kartoffel');
+
+
+-- Zutaten für Pizza (rezept_id 1)
+INSERT INTO zutaten (rezept_id, name, number, einheit) VALUES
+(1, 'Mehl', 400, 'g'),
+(1, 'Salz', 1, 'KL'),
+(1, 'Olivenöl', 2, 'EL'),
+(1, 'Frischhefe', 15, 'g'),
+(1, 'Wasser', 2.5, 'dl'),
+(1, 'Tomatensauce', NULL, NULL),
+(1, 'Käse', NULL, NULL),
+(1, 'Toppings', NULL, NULL);
+
 
 INSERT INTO rezept_zutaten (rezept_id, zutat_id)
 VALUES
@@ -117,5 +130,6 @@ VALUES
 (6, 25), # Zimt
 (7, 26), # Basilikum
 (8, 27), (9, 27); # Kartoffel
+KÄSE
 
 
