@@ -83,12 +83,6 @@ VALUES
 
     (1, 'Bratkartoffeln', 'Kartoffeln schälen und in kleine Würfel schneiden, die Kartoffelwürfel in Butter in einer Pfanne unter mehrmaligem Wenden ca. 5 Minuten andünsten, Anschliessend sie zugedeckt bei mittlerer Hitze ca. 15 Minuten weich dünsten. Dann den Deckel entfernen und bei Bedarf wenig Bratbutter hinzufügen, die Kartoffelwürfel goldbraun braten und salzen.');
 
-INSERT INTO zutaten (zutatname)
-VALUES ('Mehl'), ('Salz'), ('Olivenöl'), ('Hefe'), ('Tomatensauce'), ('Spaghetti'), ('Butter'), ('Tomaten'), ('Knoblauch'),
-('Zwiebel'), ('Pfeffer'), ('Kräuter'), ('Brot'), ('Erdbeermarmelade'), ('Honig'), ('Pasta'), ('Rahm'), ('Tomatenpüree'),
-('Parmesan'), ('Peterli'), ('Muskatnuss'), ('Eier'), ('Milch'), ('Zucker'), ('Zimt'), ('Basilikum'), ('Kartoffel');
-
-
 -- Zutaten für Pizza (rezept_id 1)
 INSERT INTO zutaten (rezept_id, name, number, einheit) VALUES
 (1, 'Mehl', 400, 'g'),
@@ -100,6 +94,21 @@ INSERT INTO zutaten (rezept_id, name, number, einheit) VALUES
 (1, 'Käse', NULL, NULL),
 (1, 'Toppings', NULL, NULL);
 
+-- Zutaten für Spaghetti (rezept_id 2)
+INSERT INTO zutaten (rezept_id, name, number, einheit) VALUES
+(2, 'Spaghetti', NULL, NULL)
+(2, 'Wasser', NULL, NULL)
+(2, 'Salz', NULL, NULL)
+(2, 'Butter', NULL, NULL)
+
+-- Zutaten für Tomatensauce (rezept_id 3)
+INSERT INTO zutaten (rezept_id, name, number, einheit) VALUES
+
+
+INSERT INTO zutaten (zutatname)
+VALUES ('Mehl'), ('Salz'), ('Olivenöl'), ('Hefe'), ('Tomatensauce'), ('Spaghetti'), ('Butter'), ('Tomaten'), ('Knoblauch'),
+('Zwiebel'), ('Pfeffer'), ('Kräuter'), ('Brot'), ('Erdbeermarmelade'), ('Honig'), ('Pasta'), ('Rahm'), ('Tomatenpüree'),
+('Parmesan'), ('Peterli'), ('Muskatnuss'), ('Eier'), ('Milch'), ('Zucker'), ('Zimt'), ('Basilikum'), ('Kartoffel');
 
 INSERT INTO rezept_zutaten (rezept_id, zutat_id)
 VALUES
