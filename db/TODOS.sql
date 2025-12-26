@@ -3,26 +3,25 @@ DROP TABLE einkaufszettel;
 DROP TABLE rezept;
 DROP TABLE zutaten;
 
+#CREATE TABLE einkaufszettel (
+    #id INT AUTO_INCREMENT PRIMARY KEY,
+    #user_id INT NOT NULL,
+    #content VARCHAR(100),
+    #due DATETIME,
+    #FOREIGN KEY (user_id) REFERENCES users(id)
+    #);
+    
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     benutzername VARCHAR(250) NOT NULL UNIQUE,
     passwort VARCHAR(250) NOT NULL
 );
 
-CREATE TABLE einkaufszettel (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT NOT NULL,
-    content VARCHAR(100),
-    due DATETIME,
-    FOREIGN KEY (user_id) REFERENCES users(id)
-    
-);
-
 CREATE TABLE rezepte (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
     rezeptname VARCHAR(250) NOT NULL,
-    description VARCHAR(250) NOT NULL,
+    beschreibung VARCHAR(250) NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
@@ -30,21 +29,13 @@ CREATE TABLE zutaten (
     id INT AUTO_INCREMENT PRIMARY KEY,
     rezept_id INT NOT NULL,
     zutatname VARCHAR(250) NOT NULL,
-    number INT,
+    nummer INT,
     einheit VARCHAR(50),
     FOREIGN KEY (rezept_id) REFERENCES rezepte(id)
 );
 
-CREATE TABLE rezept_zutaten (
-    rezept_id INT NOT NULL,
-    zutat_id INT NOT NULL,
-    PRIMARY KEY (rezept_id, zutat_id),
-    
-    FOREIGN KEY (rezept_id) REFERENCES rezept(id),
-    FOREIGN KEY (zutat_id) REFERENCES zutaten(id)
-);
-
-INSERT INTO rezepte (user_id, name, description) VALUES
+--Beschreibungen von jedem Rezept (kann man noch ändern)
+INSERT INTO rezepte (user_id, rezeptname, beschreibung) VALUES
 (1, 'Pizza', 'Klassischer Pizzateig mit Tomatensauce und Käse'),
 (1, 'Spaghetti', 'Spaghetti mit Butter - Kindheistklassiker'),
 (1, 'Tomatensauce', 'Frische Tomatensauce von scratch'),
@@ -55,29 +46,8 @@ INSERT INTO rezepte (user_id, name, description) VALUES
 (1, 'tortilla de patatas', 'Traditioneller spanischer Klassiker'),
 (1, 'Bratkartoffeln', 'Knusprige Kartoffelwürfel, perfekt als Beilage'),
 
-INSERT INTO rezept (user_id, rezeptname, kochanleitung)
-VALUES 
-    
-    (1, 'Pizza', '400 g Mehl in einer Schüssel geben, 1 KL Salz und 2 EL Olivenöl hinzugeben, ca. 15 g / die Hälfte eines Hefewürfels in 2.5 dl Wasser auflösen, Mehl mit der Flüssigkeit von der Mitte aus anrühren, Teig gut kneten bis er glatt und geschmeidig ist, Zugedeckt an der Wärme um das Doppelte aufgehen lassen, Von Hand oder mit dem Wallholz kleine oder grosse runde Scheiben formen, Auf mit Backpapier belegtes Blech geben, mit Tomatensauce und Käse belegen, beliebig mit Toppings belegen, auf Oben/Unten bei 220° C für 25-30 min backen'),
-    
-    (1, 'Spaghetti', 'Topf mit Wasser auffüllen, reichlich Salz hinzufügen, Spaghetti ins kochende Wasser legen, So lange kochen, wie es auf der Packung steht, Spaghetti absieben, in den gleichen Topf wieder hinzugeben, ein Stück Butter unterrühren'), 
-
-    (1, 'Tomatensauce', 'Tomaten waschen, ein Kreuz mit dem Messer in die Tomaten schnitzen, die Tomaten für 5 min in kochendes Wasser geben, Tomaten aus dem Wasser sieben und auskühlen lassen, die Schale der Tomaten entfernen und in Stücke schneiden, Bisschen Olivenöl in die Pfanne geben mit Knoblauch und gehackten Zwiebeln, Sobald es heiss wird die Tomatenstücke hinzufügen und köcheln, entweder mit einem Pürierstab oder mit einer Gabel die Stücke klein hacken, 20 min köcheln lassen, mit Salz und Pfeffern sowie Kräuter würzen'), 
-
-    (1, 'toms Erdbeermarmeladenbrot mit Honig', 'Brotscheibe mit Erdbeermarmelade bestreichen, etwas Honig in die Mitte setzen, servieren'),
-
-    (1, 'Cinque Pi', 'Teigwaren in reichlich kochendem Salzwasser al dente garen, Rahm aufkochen. Tomatenpüree und Parmesan dazu rühren und 1-2 Minuten köcheln lassen, Peterli daruntermischen und mit Pfeffer Salz und Muskatnuss würzen, Sofort mit den gekochten Teigwaren mischen und servieren.'),
-    
-    (1, 'Armer Ritter', 'Die Eier in der Milch verquirlen, Die Brotscheiben gut darin einweichen lassen, Inzwischen die Butter in einer Pfanne auslassen, Die Brotscheiben in der Butter goldbraun braten, Noch heiss mit Zucker und Zimt bestreuen und warm servieren'),
-    
-    (1, 'Bruschetta', 'Ofen auf 240° C vorheizen, Brot in ca. 1 cm dicke Scheiben schneiden, auf ein Backblech legen, mit Öl beträufeln, für ca. 5 Min. auf der obersten Rille des Ofens backen, Herausnehmen und auf einem Gitter etwas abkühlen lassen, Eine Knoblauchzehe schälen und halbieren, Brotscheiben mit Knoblauch einreiben, 600 g Tomaten vierteln sowie entkernen und dann in kleine Würfel schneiden, etwas Basilikum fein schneiden dann 3 EL Olivenöl daruntermischen sowie mit Salz und Pfeffer würzen. Tomaten auf den Brotscheiben verteilen.'),
-    
-    (1, 'tortilla de patatas', 'Eine Zwiebel schälen und in feine Streifen schneiden, 350 g Kartoffeln schälen und in ca. 2 mm dicke Scheiben hobeln. Olivenöl in einer Pfanne heiss werden lassen, Kartoffeln ca. 5 Min. anbraten und dabei salzen, Zwiebel ca. 2 Min. mitbraten, 4 Eier Verkopfen und mit Salz und Pfeffer würzen, Verquirlten Eier über die Kartoffeln giessen, Zugedeckt bei kleiner Hitze ca. 15 Min. fest werden lassen. Tortilla auf einen Teller stürzen, ein bisschen Öl in die Pfanne geben, Tortilla mit der ungebackenen Seite nach unten in die Pfanne zurückgleiten lassen und für ca. 5 Min. fertig braten.'),
-
-    (1, 'Bratkartoffeln', 'Kartoffeln schälen und in kleine Würfel schneiden, die Kartoffelwürfel in Butter in einer Pfanne unter mehrmaligem Wenden ca. 5 Minuten andünsten, Anschliessend sie zugedeckt bei mittlerer Hitze ca. 15 Minuten weich dünsten. Dann den Deckel entfernen und bei Bedarf wenig Bratbutter hinzufügen, die Kartoffelwürfel goldbraun braten und salzen.');
-
 -- Zutaten für Pizza (rezept_id 1)
-INSERT INTO zutaten (rezept_id, name, number, einheit) VALUES
+INSERT INTO zutaten (rezept_id, zutatname, nummer, einheit) VALUES
 (1, 'Mehl', 400, 'g'),
 (1, 'Salz', 1, 'KL'),
 (1, 'Olivenöl', 2, 'EL'),
@@ -88,50 +58,70 @@ INSERT INTO zutaten (rezept_id, name, number, einheit) VALUES
 (1, 'Toppings', NULL, NULL);
 
 -- Zutaten für Spaghetti (rezept_id 2)
-INSERT INTO zutaten (rezept_id, name, number, einheit) VALUES
-(2, 'Spaghetti', NULL, NULL)
-(2, 'Wasser', NULL, NULL)
-(2, 'Salz', NULL, NULL)
-(2, 'Butter', NULL, NULL)
+INSERT INTO zutaten (rezept_id, zutatname, nummer, einheit) VALUES
+(2, 'Spaghetti', NULL, NULL),
+(2, 'Wasser', NULL, NULL),
+(2, 'Salz', NULL, NULL),
+(2, 'Butter', NULL, NULL):
 
 -- Zutaten für Tomatensauce (rezept_id 3)
-INSERT INTO zutaten (rezept_id, name, number, einheit) VALUES
+INSERT INTO zutaten (rezept_id, zutatname, nummer, einheit) VALUES
+(3, 'Tomaten', 8, NULL),
+(3, 'Olivenöl', NULL, NULL),
+(3, 'Knoblauch', 1, 'Zehe'),
+(3, 'Zwiebel', 0.5, NULL),
+(3, 'Salz', NULL, NULL),
+(3, 'Pfeffer', NULL, NULL),
+(3, 'Kräuter', NULL, NULL); 
 
+-- Zutaten für Toms Erdbeermarmeladenbrot mit Honig (rezept_id 4)
+INSERT INTO zutaten (rezept_id, zutatname, nummer, einheit) VALUES
+(4, 'Brot', NULL, NULL),
+(4, 'Marmelade', NULL, NULL),
+(4, 'Honig', NULL, NULL);
 
-INSERT INTO zutaten (zutatname)
-VALUES ('Mehl'), ('Salz'), ('Olivenöl'), ('Hefe'), ('Tomatensauce'), ('Spaghetti'), ('Butter'), ('Tomaten'), ('Knoblauch'),
-('Zwiebel'), ('Pfeffer'), ('Kräuter'), ('Brot'), ('Erdbeermarmelade'), ('Honig'), ('Pasta'), ('Rahm'), ('Tomatenpüree'),
-('Parmesan'), ('Peterli'), ('Muskatnuss'), ('Eier'), ('Milch'), ('Zucker'), ('Zimt'), ('Basilikum'), ('Kartoffel');
+-- Zutaten für Cinque Pi (rezept_id 5)
+INSERT INTO zutaten (rezept_id, zutatname, nummer, einheit) VALUES
+(5, 'Pasta', 500, 'g'),
+(5, 'Halbrahm', 4, 'dl'),
+(5, 'Tomatenpüree', 3, 'EL'),
+(5, 'Parmesan', 3, 'EL'), 
+(5, 'Peterli', 2, 'EL'),
+(5, 'Muskatnuss', 1, 'Prise'),
+(5, 'Salz', NULL, NULL),
+(5, 'Pfeffer', NULL, NULL);
 
-INSERT INTO rezept_zutaten (rezept_id, zutat_id)
-VALUES
-(1, 1), # Mehl
-(1, 2), (2, 2), (3, 2), (5, 2), (7, 2), (8, 2), (9, 2), # Salz
-(1, 3), (3, 3), (7, 3), (8, 3), # Olivenöl
-(1, 4), # Hefe
-(1, 5), # Tomatensauce
-(2, 6), # Spaghetti
-(2, 7), (6, 7), (9, 7), # Butter
-(3, 8), (7, 8), # Tomaten
-(3, 9), (7, 9), # Knoblauch
-(3, 10), (8, 10), # Zwiebel
-(3, 11), (5, 11), (7, 11), (8, 11), # Pfeffer
-(3, 12), # Kräuter
-(4, 13), (6, 13), (7, 13), # Brot 
-(4, 14), # Erdbeermarmelade 
-(4, 15), # Honig
-(5, 16), # Pasta
-(5, 17), # Rahm
-(5, 18), # Tomatenpüree
-(5, 19), # Parmesan
-(5, 20), # Peterli
-(5, 21), # Muskatnuss
-(6, 22), (8, 22), # Eier
-(6, 23), # Milch
-(6, 24), # Zucker
-(6, 25), # Zimt
-(7, 26), # Basilikum
-(8, 27), (9, 27); # Kartoffel
-KÄSE
+-- Zutaten für Armer Ritter (rezept_id 6)
+INSERT INTO zutaten (rezept_id, zutatname, nummer, einheit) VALUES
+(6, 'Brot', 4, 'Scheiben'),
+(6, 'Ei', 1, NULL),
+(6, 'Milch', 2.5, 'dl'),
+(6, 'Butter', 50, 'g'),
+(6, 'Zucker', NULL, NULL),
+(6, 'Zimt', NULL, NULL);
 
+-- Zutaten für Bruschetta (rezept_id 7)
+INSERT INTO zutaten (rezept_id, zutatname, nummer, einheit) VALUES
+(7, 'Brot', NULL, NULL),
+(7, 'Olivenöl', 3, 'EL'), 
+(7, 'Knoblauch', 1, 'Zehe'), 
+(7, 'Tomaten', 600, 'g'), 
+(7, 'Basilikum', NULL, NULL), 
+(7, 'Salz', NULL, NULL),
+(7, 'Pfeffer', NULL, NULL);
+
+-- Zutaten für tortilla de patatas (rezept_id 8)
+INSERT INTO zutaten (rezept_id, zutatname, nummer, einheit) VALUES
+(8, 'Zwiebel', 1, NULL),
+(8, 'Kartoffeln', 350, 'g'), 
+(8, 'Olivenöl', NULL, NULL),
+(8, 'Eier', 4, NULL),
+(8, 'Salz', NULL, NULL),
+(8, 'Pfeffer', NULL, NULL);
+
+-- Zutaten für Bratkartoffel (rezept_id 9)
+INSERT INTO zutaten (rezept_id, zutatname, nummer, einheit) VALUES
+(9, 'Kartoffeln', NULL, NULL),
+(9, 'Butter', NULL, NULL),
+(9, 'Salz', NULL, NULL);
 
