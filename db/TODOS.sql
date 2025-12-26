@@ -5,16 +5,9 @@ DROP TABLE zutaten;
 
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    email VARCHAR(100) NOT NULL UNIQUE,
-    passwort VARCHAR(100) NOT NULL,
-    benutzername VARCHAR(100) NOT NULL UNIQUE
+    benutzername VARCHAR(250) NOT NULL UNIQUE,
+    passwort VARCHAR(250) NOT NULL
 );
-
-#CREATE TABLE users (
-    #id INT AUTO_INCREMENT PRIMARY KEY,
-    #username VARCHAR(250) NOT NULL UNIQUE,
-    #password VARCHAR(250) NOT NULL
-#);
 
 CREATE TABLE einkaufszettel (
     id INT AUTO_INCREMENT PRIMARY KEY,
