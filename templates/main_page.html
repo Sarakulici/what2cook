@@ -7,7 +7,7 @@
                 <a href="{{ url_for('rezept_detail', rezept_id=rezept.id) }}">{{ rezept.name }}</a>
             </li>
           {% else %}
-            <div>Keine Rezepte gefunden? Füge eins hinzu!</div>
+            <div>Keine Rezepte gefunden. Füge eins hinzu! 🎉</div>
           {% endfor %}
         </ul>
 
@@ -23,3 +23,5 @@
         </form>
       </div>
 {% endblock %}
+
+      
