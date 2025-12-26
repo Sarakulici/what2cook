@@ -1,7 +1,7 @@
-DROP TABLE users; 
-DROP TABLE einkaufszettel;
-DROP TABLE rezept;
-DROP TABLE zutaten;
+DELETE FROM zutaten;
+DELETE FROM rezepte;
+ALTER TABLE rezepte AUTO_INCREMENT = 1;
+ALTER TABLE zutaten AUTO_INCREMENT = 1;
 
 #CREATE TABLE einkaufszettel (
     #id INT AUTO_INCREMENT PRIMARY KEY,
