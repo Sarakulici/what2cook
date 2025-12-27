@@ -1,16 +1,3 @@
-DELETE FROM zutaten;
-DELETE FROM rezepte;
-ALTER TABLE rezepte AUTO_INCREMENT = 1;
-ALTER TABLE zutaten AUTO_INCREMENT = 1;
-
-#CREATE TABLE einkaufszettel (
-    #id INT AUTO_INCREMENT PRIMARY KEY,
-    #user_id INT NOT NULL,
-    #content VARCHAR(100),
-    #due DATETIME,
-    #FOREIGN KEY (user_id) REFERENCES users(id)
-    #);
-    
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(250) NOT NULL UNIQUE,
